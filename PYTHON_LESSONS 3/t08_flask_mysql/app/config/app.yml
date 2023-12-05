@@ -1,0 +1,18 @@
+COMMON: &common
+  DEBUG: False
+  SQLALCHEMY_TRACK_MODIFICATIONS: False
+
+development:
+  <<: *common
+  DEBUG: True
+#  SQLALCHEMY_DATABASE_URI: 'sqlite://'
+#  SQLALCHEMY_DATABASE_URI: 'sqlite:///device_db.sqlite'
+  SQLALCHEMY_DATABASE_URI: 'mysql+pymysql://root:PBZXWDSci5GS@localhost/LAB1'
+
+production:
+  <<: *common
+  SQLALCHEMY_DATABASE_URI: 'mysql+pymysql://root:PBZXWDSci5GS@localhost/LAB1'
+
+ADDITIONAL_CONFIG:
+  MYSQL_ROOT_USER: root
+  MYSQL_ROOT_PASSWORD: PBZXWDSci5GS
